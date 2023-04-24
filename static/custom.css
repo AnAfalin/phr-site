@@ -64,6 +64,20 @@ textarea.field {
 	/*font-family: 'Roboto';*/
 }
 
+.msg {
+	margin: 15px 0;
+	padding: 10px;
+	display: none;
+}
+.msg.true {
+	background: green;
+	display: block;
+}
+.msg.false {
+	background: red;
+	display: block;
+}
+
 /* попап*/
 .overlay {
     position: fixed;
@@ -81,9 +95,10 @@ textarea.field {
 	background: #fff;
 	padding: 15px;
 	position: relative;
-	max-width: 320px;
+	max-width: 800px;
 	width: 100%;
 	box-sizing: border-box;
+	min-height: 300px;
 }
 .overlay .popup .close {
     position: absolute;
@@ -118,6 +133,17 @@ textarea.field {
 	padding: 50px 0;
 }
 
+table {
+	border-collapse: collapse;
+	max-width: 600px;
+	width: 100%;
+	margin: 15px auto;
+}
+
+td, th {
+	padding: 3px 7px 4px;
+	border: 1px solid;
+}
 
 /* БЭМ */
 header .container {
@@ -188,12 +214,16 @@ header nav a {
 }
 
 #partners .wrap {
-	display: grid;
+	display: flex;
 	/* grid-template-columns: repeat(5, 1fr); */
-	grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+	/*grid-template-columns: repeat(auto-fit,minmax(150px,1fr));*/
 	gap: 20px;
 	max-width: 800px;
 	margin: 0 auto;
+	/*place-items: center;*/
+	/*place-content: center;*/
+	flex-wrap: wrap;
+	justify-content: center;
 }
 #partners .preview {
 	max-width: 150px;
@@ -252,17 +282,14 @@ footer .btn {
 }
 
 /* Адаптив */
-@media all and (min-width: 1211px) {
-	.nob {
-		display: none;
-	}
-	
-}
-@media all and (max-width: 1210px) {
+@media all and (max-width: 1430px) {
 	.container:not(.cpn) {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+}
+
+@media all and (max-width: 1210px) {
 	.nom {
 		display: none;
 	}
@@ -334,6 +361,3 @@ footer .btn {
 	}
 
 }
-
-
-
